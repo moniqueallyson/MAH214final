@@ -1,0 +1,31 @@
+---
+title: "Analytical Workflow Final"
+author: 
+    name: "Monique Hernandez"
+    email: mahernandez@ucsb.edu
+    affiliation: 
+    - University of California, Santa Barbara
+    - Masters of Environmental Data Science, 2027
+    - B.S. in Environmental Studies, 2025
+date: "Augustt 28, 2026"
+toc: true
+format:
+  html:
+    theme: "pulse"
+    other-links:
+      - text: Course Website EDS 221 
+        href: https://eds-214-reproducibility-m26.github.io/course-materials/final-project/final-project.html
+      - text: Monique's website
+        href: moniqueallyson.github.io
+execute:
+  message: false
+  warning: false
+---
+
+[click here for github link](https://github.com/moniqueallyson/MAH214final)
+
+
+```{r}
+
+
+```

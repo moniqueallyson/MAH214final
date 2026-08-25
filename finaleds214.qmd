@@ -41,14 +41,17 @@ prm <- read_csv("data/RioMameyesPuenteRoto.csv")
 ## Cleaning Data
 ```{r}
 
-combined <- bind_rows(bq1, bq2, bq3, prm) # bind_rows vs rbind
+combined <- bind_rows(bq1, bq2, bq3, prm) # rbind won't be as effective as bind_rows
 
-clean_combine <- combined |> # clean the combine data
-  select(Sample_ID, Sample_Date,`NH4-N`, `NO3-N`, Ca, Mg, K) # select the columns of interest
+clean_combine <- combined |> 
+  select(Sample_ID, Sample_Date,`NH4-N`, `NO3-N`, Ca, Mg, K) # 
 
-glimpse(clean_combine) # glimpse at the clean data
+glimpse(clean_combine) # utilisizing glimpse in order to view the columns in the clean data
 
 ```
+
+## Clean the dates from 1988 to 1995
+
 
 ## Creating the tibble
 ```{r, message=FALSE}
@@ -99,17 +102,19 @@ print(combine_tibble)
 
 ## Pivot long
 ```{r}
-clean_combine_long <- combine_tibble |> # new data from combine_tibble
+clean_combine_long <- combine_tibble |> # 
   pivot_longer( # collapse columns in order to plot by ions & their concentration levels 
-    cols = !window_start & !site, # columns are not window start
-    names_to = "ion", # names are ions
-    values_to = "concentration" # these are the values
+    cols = !window_start & !site, # columns will NOT select with "!"
+    names_to = "ion", # to have the ion listed 
+    values_to = "concentration" # for the columns need values from the ion concentrations
   )
 print(clean_combine_long)
 ```
 
 ## Plot it!
 ```{r}
+# fix the years from 1985 to 1988
+# change x-axis label to "Years"
 # Need sites lines
 # need to scale for the proper units
 # need to scale for the proper years
@@ -122,6 +127,8 @@ ggplot(
     color = ion
     )
 ) +
+  ggtitle("Concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo, 9-wk moving
+  averages") +
   geom_line() +
   geom_point() +
   facet_wrap(~ion, scales = "free")

@@ -1,4 +1,7 @@
 library(tidyverse)
+library(viridis)
+
+
 
 bq1 <- read_csv("data/QuebradaCuenca1-Bisley.csv")
 bq2 <- read_csv("data/QuebradaCuenca2-Bisley.csv")
@@ -85,6 +88,10 @@ clean_combine_long <- combine_tibble |>
 print(clean_combine_long)
 
 
+don <- babynames %>% 
+  filter(name %in% c("Ashley", "Patricia", "Helen")) %>%
+  filter(sex=="F")
+
 # plot with facet wrap
 ggplot(
   data = clean_combine_long,
@@ -96,6 +103,7 @@ ggplot(
   ) +
   geom_point() +
   geom_line() +
+  scale_color_viridis(discrete = TRUE)
   facet_wrap(~ion, scales = "free") +
   theme_bw() +
   theme(

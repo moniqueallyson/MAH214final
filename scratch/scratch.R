@@ -50,10 +50,16 @@ for (i in 1:nrow(combine_tibble)) {
   combine_tibble$K_mgl[i] <- mean_k
   mg <- clean_combine$Mg[clean_combine$Sample_Date >= w1 & clean_combine$Sample_Date < w2]
   mean_mg <- mean(mg, na.rm = TRUE)
-  combine_tibble$mg_mgl[i] <- mean_mg
+  combine_tibble$Mg_mgl[i] <- mean_mg
   nh4n <- clean_combine$`NH4-N`[clean_combine$Sample_Date >= w1 & clean_combine$Sample_Date < w2]
   mean_nh4n <- mean(nh4n, na.rm = TRUE)
   combine_tibble$NH4N_ugl[i] <- mean_nh4n
+  ca <- clean_combine$Ca[clean_combine$Sample_Date >= w1 & clean_combine$Sample_Date < w2]
+  mean_ca <- mean(ca, na.rm = TRUE)
+  combine_tibble$Ca_mgl <- mean_ca
+  no3n <- clean_combine$`NO3-N`[clean_combine$Sample_Date >= w1 & clean_combine$Sample_Date < w2]
+  mean_no3n <-mean(no3n, na.rm = TRUE)
+  combine_tibble$NO3N_ugl <- mean_no3n
 }
 print(combine_tibble) # does not show site per value
 

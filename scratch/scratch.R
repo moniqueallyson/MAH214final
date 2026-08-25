@@ -15,7 +15,7 @@ combined <- bind_rows(bq1, bq2, bq3, prm) # bind_rows vs rbind
 
 
 clean_combine <- combined |>
-  select(Sample_Date, Sample_Date,`NH4-N`, `NO3-N`, Ca, Mg, K) |>  
+  select(Sample_Date,`NH4-N`, `NO3-N`, Ca, Mg, K)  
 
 
 

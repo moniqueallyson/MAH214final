@@ -5,7 +5,11 @@ bq2 <- read_csv("data/QuebradaCuenca2-Bisley.csv")
 bq3 <- read_csv("data/QuebradaCuenca3-Bisley.csv")
 prm <- read_csv("data/RioMameyesPuenteRoto.csv")
 
+
 combined <- bind_rows(bq1, bq2, bq3, prm) # bind_rows vs rbind
+
+
+
 
 clean_combine <- combined |>
   select(Sample_ID, Sample_Date,`NH4-N`, `NO3-N`, Ca, Mg, K)
@@ -38,6 +42,7 @@ combine_tibble <- tibble(
 )
 
 
+
 w2 <- clean_combine$Sample_Date[1]
 for (i in 1:nrow(combine_tibble)) {
   w1 <- w2 
@@ -63,8 +68,14 @@ for (i in 1:nrow(combine_tibble)) {
 }
 print(combine_tibble) # does not show site per value
 
+# my attempt to get the site from sample id
+combine_tibble$site <- clean_combine$Sample_ID
+
+clean_site <- clean_combine$Sample_ID
 
 
+
+#clean combine long
 clean_combine_long <- combine_tibble |> 
   pivot_longer(
     cols = !window_start & !site, # columns are not window start
@@ -74,14 +85,22 @@ clean_combine_long <- combine_tibble |>
 print(clean_combine_long)
 
 
-
+# plot with facet wrap
 ggplot(
   data = clean_combine_long,
   mapping = aes(
     x = window_start,
-    y = concentration
+    y = concentration,
+    color = ion
     )
-) +
-  geom_line() +
+  ) +
   geom_point() +
-  facet_wrap(~ion, scales = "free")
+  geom_line() +
+  facet_wrap(~ion, scales = "free") +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(), # remove major grid lines
+    panel.grid.minor = element_blank() # remove minor grid lines
+  )
+
+

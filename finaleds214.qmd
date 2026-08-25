@@ -51,7 +51,7 @@ glimpse(clean_combine) # glimpse at the clean data
 ```
 
 ## Creating the tibble
-```{r}
+```{r, message=FALSE}
 combine_tibble <- tibble(
   window_start = seq(
     ymd("1984-05-20"),
@@ -69,7 +69,7 @@ combine_tibble <- tibble(
 
 ## Calculating a moving average
 
-```{r}
+```{r, message=FALSE}
 w2 <- clean_combine$Sample_Date[1]
 for (i in 1:nrow(combine_tibble)) {
   w1 <- w2 
@@ -106,7 +106,6 @@ clean_combine_long <- combine_tibble |> # new data from combine_tibble
     values_to = "concentration" # these are the values
   )
 print(clean_combine_long)
-
 ```
 
 ## Plot it!
@@ -119,7 +118,8 @@ ggplot(
   data = clean_combine_long,
   mapping = aes(
     x = window_start,
-    y = concentration
+    y = concentration,
+    color = ion
     )
 ) +
   geom_line() +

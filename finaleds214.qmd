@@ -43,21 +43,17 @@ prm <- read_csv("data/RioMameyesPuenteRoto.csv")
 
 combined <- bind_rows(bq1, bq2, bq3, prm) # rbind won't be as effective as bind_rows
 
-clean_combine <- combined |> 
-  select(Sample_ID, Sample_Date,`NH4-N`, `NO3-N`, Ca, Mg, K) # 
+clean_combine <- combined |>
+  select(Sample_ID, Sample_Date,`NH4-N`, `NO3-N`, Ca, Mg, K)
 
 glimpse(clean_combine) # utilisizing glimpse in order to view the columns in the clean data
-
 ```
-
-## Clean the dates from 1988 to 1995
-
 
 ## Creating the tibble
 ```{r, message=FALSE}
 combine_tibble <- tibble(
   window_start = seq(
-    ymd("1984-05-20"),
+    ymd("1988-01-05"),
     ymd("1994-12-31"),
     by = "9 weeks"
   ),
@@ -113,11 +109,11 @@ print(clean_combine_long)
 
 ## Plot it!
 ```{r}
-# fix the years from 1985 to 1988
-# change x-axis label to "Years"
+
 # Need sites lines
-# need to scale for the proper units
-# need to scale for the proper years
+# Scale bny years
+# scale by measurements
+
 
 ggplot(
   data = clean_combine_long,
@@ -131,6 +127,10 @@ ggplot(
   averages") +
   geom_line() +
   geom_point() +
+  labs (
+    x = "Years",
+    y = NULL
+  ) +
   facet_wrap(~ion, scales = "free")
 
 ```

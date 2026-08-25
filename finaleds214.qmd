@@ -13,7 +13,7 @@ format:
   html:
     theme: "pulse"
     other-links:
-      - text: Course Website EDS 221 
+      - text: Course Website EDS 214 
         href: https://eds-214-reproducibility-m26.github.io/course-materials/final-project/final-project.html
       - text: Monique's website
         href: moniqueallyson.github.io

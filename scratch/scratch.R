@@ -15,7 +15,9 @@ combined <- bind_rows(bq1, bq2, bq3, prm) # bind_rows vs rbind
 
 
 clean_combine <- combined |>
-  filter(Sample_ID, Sample_Date,`NH4-N`, `NO3-N`, Ca, Mg, K)
+  select(Sample_Date,`NH4-N`, `NO3-N`, Ca, Mg, K)  
+
+
 
 glimpse(clean_combine)
 
@@ -75,6 +77,9 @@ print(combine_tibble) # does not show site per value
 combine_tibble$site <- clean_combine$Sample_ID
 
 clean_site <- clean_combine$Sample_ID
+
+site <- clean_combine$Sample_ID
+combine_tibble$site <- filter(clean_combine$Sample_Date
 
 
 

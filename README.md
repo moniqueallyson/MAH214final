@@ -1,7 +1,7 @@
-# EDS 214 - Analytical Workflow and Scientific Reproducibility
-The github for the final project for the MEDS program at UCSB for the EDS 214 course. 
+# Analytical Workflow and Scientific Reproducibility
+This repository houses the final project for the MEDS program at UCSB for the EDS 214 course that focuses on automating, documentating, and organizing workflow, as well as collaboration.
 
-## Recreating a figure for reproducibilty
+## Recreating a figure
 The final project is the reproduction of a graph from the article by Douglas A. Schafer titled, "Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico". The final output is a plot with the chemical ions after the disturbance over a 9 week average from the years between 1985 to 1995.
 
 ## Data folder 

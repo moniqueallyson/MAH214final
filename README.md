@@ -4,7 +4,7 @@ This repository houses the final project for the MEDS program at UCSB for the ED
 ## Recreating a figure
 ![Figure. 3. Concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo, 9-wk moving
 averages. (a) potassium, (b) nitrate-N, (c) magnesium, (d) calcium and (e) ammonium-N. The vertical lines
-mark the time of hurricane disturbance.](/images/Schaefer_figure3.png){width=500px height=500px})
+mark the time of hurricane disturbance.](/images/Schaefer_figure3.png){width=500px height=500px}
 
 The final project is the reproduction of a graph, seen above, from the article by Douglas A. Schafer titled, "Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico". The final output is a plot with the chemical ions after the disturbance over a 9 week average from the years between 1985 to 1995.
 

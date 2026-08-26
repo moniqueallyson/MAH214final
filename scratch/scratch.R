@@ -78,6 +78,9 @@ combine_tibble$site <- clean_combine$Sample_ID
 
 clean_site <- clean_combine$Sample_ID
 
+site <- clean_combine$Sample_ID
+combine_tibble$site <- filter(clean_combine$Sample_Date
+
 
 
 #clean combine long

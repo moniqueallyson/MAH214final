@@ -1,7 +1,9 @@
 # **Self-Assessment for EDS 214 Final Project**
 Monique A. Hernandez
-
+x - means "Meets spec"
+no x - means "Not yet"
 # Automate
+### Reason: Script is running with error in the moving average file
 - [ ] **The entire analysis is automated**
   - Data reading and cleaning is handled in a standalone script that creates intermediate output(s).
   - The analysis is performed in a Quarto document that reads intermediate outputs.
@@ -13,16 +15,18 @@ Monique A. Hernandez
   - The Quarto document creates a figure that is a reasonable approximation of the original.
 
 # Organize
-- [ ] **Data are properly organized**
+### The folders are organized with its appropriate files and code is in the file in R
+- [X] **Data are properly organized**
   - _Raw_ data is contained in its own folder.
   - _Outputs_ are contained in a separate folder from raw data.
 
-- [ ] **Code is properly organized**
+- [X] **Code is properly organized**
   - At least one function is defined in a script in R/ and used elsewhere in the workflow.
   - All code in the repo (_except_ in the scratch/ folder) is required for the analysis (i.e., no "safety blanket" code remaining)
 
 # Document
-- [ ] **The repo has an effective README** 
+### Read me is updated though images show on github, they are not rendering well but will be fixed.
+- [X] **The repo has an effective README** 
   - A short, but descriptive title 
     - A README’s title is set to the repository name by default - change this!
   - A brief explanation of the repository’s purpose
@@ -38,6 +42,7 @@ Monique A. Hernandez
     - In an appropriate, consistent format, including links.
     - Don’t forget to add references for datasets too.
     
+### Code is following a professional style and has comments explaing why.
 - [ ] **Code follows a professional style**
   - All code files follow a consistent style (the Air formatter automates this).
   - The code has an appropriate amount of comments.

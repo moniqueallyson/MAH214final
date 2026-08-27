@@ -23,60 +23,44 @@ execute:
 ---
 
 # Background
-Text can go here!
+We reproduced a figure.
 
 # Data
 
-## Read in data
+The data is from
 
-```{r, message=FALSE}
-source("R/moving-average.R")
+```{r}
 library(tidyverse)
-
-bq1 <- read_csv("data/QuebradaCuenca1-Bisley.csv")
-bq2 <- read_csv("data/QuebradaCuenca2-Bisley.csv")
-bq3 <- read_csv("data/QuebradaCuenca3-Bisley.csv")
-prm <- read_csv("data/RioMameyesPuenteRoto.csv")
+figure3 <- read_csv(
+  "/Users/master/Downloads/Bren/MEDS Summer/eds214/MAH214final/output/clean_data.csv"
+)
 ```
 
 
-## Cleaning and combining Data
-```{r}
-bq1_data <- moving_average(bq1) # calling new data to input moving average for first site
-bq2_data <- moving_average(bq2)
-bq3_data <- moving_average(bq3)
-prm_data <- moving_average(prm)
 
-combined <- bind_rows(bq1_data, bq2_data, bq3_data, prm_data) # rbind to combine the rows more eficient than bind_rows
-```
+# Methods
+we used R in positron.
 
-## Pivot long
-```{r}
-clean_combine_long <- combined |> #
-  pivot_longer(
-    # collapse columns in order to plot by ions & their concentration levels
-    cols = k_mgl:NO3N_ugl, # columns will NOT select with "!"
-    names_to = "ion", # to have the ion listed
-    values_to = "concentration" # for the columns need values from the ion concentrations
-  )
-print(clean_combine_long)
-```
-
-## Plot it!
+# Results
 ```{r}
 
 ggplot(
-  data = clean_combine_long,
+  data = figure3,
   mapping = aes(
     x = Sample_Date,
     y = concentration,
-    color = site
+    linetype = site
   )
 ) +
   ggtitle(
     "Hurricane effect on stream chemistry"
   ) +
   geom_line() +
+  geom_vline(
+    xintercept = ymd("1989-09-18"),
+    linetype = "dashed",
+    linewidth = 0.4
+  ) +
   labs(
     x = "Years",
     y = NULL
@@ -84,15 +68,11 @@ ggplot(
   facet_wrap(~ion, ncol = 1, scales = "free") +
   theme_bw() +
   theme(
+    legend.title = element_blank()
+  ) +
+  theme(
     panel.grid.major = element_blank(), # remove major grid lines
     panel.grid.minor = element_blank() # remove minor grid lines
   )
 ```
 
-
-
-# Methods
-Text can go here!
-
-# Results
-Text can go here!

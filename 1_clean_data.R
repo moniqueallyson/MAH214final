@@ -27,3 +27,5 @@ clean_combine_long <- combined |> #
     values_to = "concentration" # for the columns need values from the ion concentrations
   )
 print(clean_combine_long)
+
+write_csv(clean_combine_long, "output/clean_data.csv") # make the csv file and have it under output

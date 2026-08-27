@@ -55,7 +55,7 @@ combine_tibble <- tibble(
   window_start = seq(
     ymd("1988-01-05"),
     ymd("1994-12-31"),
-    by = "9 weeks"
+    by = "63 days"
   ),
   site = NA,
   NH4N_ugl = NA,

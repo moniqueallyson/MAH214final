@@ -14,11 +14,11 @@ bq3_data <- moving_average(bq3)
 prm_data <- moving_average(prm)
 
 combined <- bind_rows(bq1_data, bq2_data, bq3_data, prm_data) # bind_rows vs rbind
-
+glimpse(combined)
 
 clean_combine <- combined |>
-  select(Sample_Date, Sample_ID, `NH4-N`, `NO3-N`, Ca, Mg, K) |>
-  filter(Sample_Date >= ymd("1984-05-20") & Sample_Date <= ymd("1994-12-31"))
+  select(window_start, site, `NH4-N`, `NO3-N`, ca_mgl, mg_mgl, k_mgl) |>
+  filter(window_start >= ymd("1988-01-05") & window_start <= ymd("1994-12-31"))
 
 
 glimpse(clean_combine)
@@ -36,7 +36,7 @@ ggplot(
 
 combine_tibble <- tibble(
   window_start = seq(
-    ymd("1984-05-20"),
+    ymd("1988-01-05"),
     ymd("1994-12-31"),
     by = "63 days"
   ),
@@ -114,8 +114,7 @@ ggplot(
 ) +
   geom_point() +
   geom_line() +
-  scale_color_viridis(discrete = TRUE)
-facet_wrap(~ion, scales = "free") +
+  facet_wrap(~ion, scales = "free") +
   theme_bw() +
   theme(
     panel.grid.major = element_blank(), # remove major grid lines

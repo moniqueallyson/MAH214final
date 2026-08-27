@@ -1,2 +1,23 @@
 project:
+  type: website
   output-dir: ../docs
+  resources:
+    - .nojekyll
+
+website:
+  title: "EDS 214 - Analytical Workflow and Scientific Reproducibilty"
+  navbar:
+    pinned: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: paper.qmd
+        text: Paper
+
+format:
+  html:
+    theme: pulse
+    mainfont: quicksand
+    css: styles.css
+    toc: true
+    pagelayout: full

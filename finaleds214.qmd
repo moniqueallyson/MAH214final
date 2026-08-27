@@ -76,7 +76,6 @@ ggplot(
     "Hurricane effect on stream chemistry"
   ) +
   geom_line() +
-  geom_point() +
   labs(
     x = "Years",
     y = NULL

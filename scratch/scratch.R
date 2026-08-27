@@ -1,3 +1,5 @@
+source(R/moving_average.R)
+
 library(tidyverse)
 library(viridis)
 
@@ -8,7 +10,7 @@ bq2 <- read_csv("data/QuebradaCuenca2-Bisley.csv")
 bq3 <- read_csv("data/QuebradaCuenca3-Bisley.csv")
 prm <- read_csv("data/RioMameyesPuenteRoto.csv")
 
-
+moving_average(bq1, bq2, bq3, prm)
 combined <- bind_rows(bq1, bq2, bq3, prm) # bind_rows vs rbind
 
 

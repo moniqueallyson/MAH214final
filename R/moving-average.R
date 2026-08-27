@@ -1,8 +1,11 @@
 moving_average <- function(water) {
-  water |>
-    filter()
+  water <- water |>
+    select(Sample_Date, Sample_ID, `NH4-N`, `NO3-N`, Ca, Mg, K) |>
+    filter(
+      Sample_Date >= ymd("1988-01-05") & Sample_Date <= ymd("1994-12-31")
+    )
   result <- tibble(
-    window_start = seq(
+    Sample_Date = seq(
       ymd(water$Sample_Date[1]),
       ymd(water$Sample_Date[nrow(water)]),
       by = "63 days"
@@ -16,8 +19,8 @@ moving_average <- function(water) {
   )
 
   for (i in 1:nrow(result)) {
-    w1 <- water$Sample_Date[i]
-    w2 <- w1 + weeks(9)
+    w1 <- result$Sample_Date[i]
+    w2 <- w1 + 63
 
     in_window <- water$Sample_Date >= w1 & water$Sample_Date < w2
 

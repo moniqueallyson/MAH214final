@@ -17,7 +17,8 @@ combined <- bind_rows(bq1_data, bq2_data, bq3_data, prm_data) # bind_rows vs rbi
 
 
 clean_combine <- combined |>
-  select(Sample_Date, `NH4-N`, `NO3-N`, Ca, Mg, K)
+  select(Sample_Date, Sample_ID, `NH4-N`, `NO3-N`, Ca, Mg, K) |>
+  filter(Sample_Date >= ymd("1984-05-20") & Sample_Date <= ymd("1994-12-31"))
 
 
 glimpse(clean_combine)

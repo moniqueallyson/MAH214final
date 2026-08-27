@@ -43,7 +43,7 @@ no x - means "Not yet"
     - Don’t forget to add references for datasets too.
     
 ### Code is following a professional style and has comments explaing why.
-- [ ] **Code follows a professional style**
+- [X] **Code follows a professional style**
   - All code files follow a consistent style (the Air formatter automates this).
   - The code has an appropriate amount of comments.
     - Comments are minimized by using _meaningful variable names_ and _helper functions_.

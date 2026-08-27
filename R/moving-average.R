@@ -1,14 +1,13 @@
-# The input to this function should be a data frame containing stream chemistry data
-library(tidyverse)
-
-
 moving_average <- function(water) {
+  water |>
+    filter()
   result <- tibble(
     window_start = seq(
-      ymd("1984-05-20"),
-      ymd("1994-12-31"),
-      by = "9 weeks"
+      ymd(water$Sample_Date[1]),
+      ymd(water$Sample_Date[nrow(water)]),
+      by = "63 days"
     ),
+    site = water$Sample_ID,
     k_mgl = NA,
     mg_mgl = NA,
     Ca_mgl = NA,
@@ -36,12 +35,12 @@ moving_average <- function(water) {
     # The line above gets potassium in the window. Get the rest of the ions too
 
     # Calculate the mean of each ion concentration and fill in the result
-    result$k_mgl[___] <- mean(K, na.rm = TRUE)
-    result$NH4N_ugl[___] <- mean(`NH4-N`, na.rm = TRUE)
-    result$NO3N_ugl[___] <- mean(`NO3-N`, na.rm = TRUE)
-    result$Ca_mgl[___] <- mean(Ca, na.rm = TRUE)
-    result$Mg_mgl[___] <- mean(Mg, na.rm = TRUE)
+    result$k_mgl[water] <- mean(K, na.rm = TRUE)
+    result$NH4N_ugl[water] <- mean(`NH4-N`, na.rm = TRUE)
+    result$NO3N_ugl[water] <- mean(`NO3-N`, na.rm = TRUE)
+    result$Ca_mgl[water] <- mean(Ca, na.rm = TRUE)
+    result$Mg_mgl[water] <- mean(Mg, na.rm = TRUE)
   }
-
+  return(result)
   # Return the result
 }

@@ -5,6 +5,8 @@ moving_average <- function(water) {
     filter(
       Sample_Date >= ymd("1988-01-05") & Sample_Date <= ymd("1994-12-31") # refrencing the time period from original figure
     )
+
+  # Create a tibble to hold the result
   result <- tibble(
     # tibble to input the values for the ions
     Sample_Date = seq(
@@ -21,21 +23,23 @@ moving_average <- function(water) {
     NO3N_ugl <- NA, # Ammonium
   )
 
+  # Calculate the moving average for each ion in each window
   for (i in 1:nrow(result)) {
-    # loop using the number of rows to start the sequence 1:number
     w1 <- result$Sample_Date[i] # first window date from the result tibble using the column date
     w2 <- w1 + 63 # the next window date from the initial (w1) date
 
     in_window <- water$Sample_Date >= w1 & water$Sample_Date < w2 # window creation using the loop created above
 
+    # Extract the ion column inside the window
     k_window <- water$K[in_window] # finding Potassium values found inside the window
     nh4_window <- water$`NH4-N`[in_window] # find Ammonium
     no3_window <- water$`NO3-N`[in_window] # find Nitrate
     ca_window <- water$Ca[in_window] # find Calcium
     mg_window <- water$Mg[in_window] # find Magnesium
 
-    result$k_mgl[i] <- mean(k_window, na.rm = TRUE) # using mean function to find the mean and input into result tibble
-    result$NH4N_ugl[i] <- mean(nh4_window, na.rm = TRUE)
+    # Inputting the mean
+    result$k_mgl[i] <- mean(k_window, na.rm = TRUE) # Potassium mean
+    result$NH4N_ugl[i] <- mean(nh4_window, na.rm = TRUE) #
     result$NO3N_ugl[i] <- mean(no3_window, na.rm = TRUE)
     result$ca_mgl[i] <- mean(ca_window, na.rm = TRUE)
     result$mg_mgl[i] <- mean(mg_window, na.rm = TRUE)

@@ -14,11 +14,11 @@ moving_average <- function(water) {
       by = "63 days" # 9 week window = 63 days
     ),
     site = water$Sample_ID[1], # to receive the site for the respective ion value
-    k_mgl = NA, # ion concentration value placehholderfor Potassium left NA to get an input
-    mg_mgl = NA, # Magnesium
-    ca_mgl = NA, # Calcium
-    NH4N_ugl = NA, #  Nitrate
-    NO3N_ugl = NA, # Ammonium
+    k_mgl <- NA, # ion concentration value placehholderfor Potassium left NA to get an input
+    mg_mgl <- NA, # Magnesium
+    ca_mgl <- NA, # Calcium
+    NH4N_ugl <- NA, #  Nitrate
+    NO3N_ugl <- NA, # Ammonium
   )
 
   for (i in 1:nrow(result)) {

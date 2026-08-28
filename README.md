@@ -17,28 +17,41 @@ mark the time of hurricane disturbance." width="500" height="500">
 The final project is the reproduction of a graph, seen above, from the article by Douglas A. Schafer titled, "Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico". The final output is a graph with five chemical ions for each of the four observed sites over a 9 week average from the years between 1985 to 1995.
 
 ## Data folder 
-The data folder hosts the data that was downloaded from the EDI portal, found here https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064, which contain multiple data packages based on the sites recorded and the respective chemical concentration levels after the hurricane.
+
+The **data folder** hosts the data that was downloaded online from Environmental Data Initiative, found here https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064, and are the following files:
+
+- QuebradaCuenca1-Bisley.csv
+- QuebradaCuenca2-Bisley.csv
+- QuebradaCuenca3-Bisley.csv
+- RioMameyesPuenteRoto.csv
 
 The R data file inside the **R folder** defines the moving function inputting the values into a tibble after selecting columns and filtering through the time period, from 1988 to 1994.
 
 The clean data titled **1_clean_data.R** contains the data for reading and finding the moving average from the raw data, binding the data, and pivoting longer.
 
-The clean data can be found inside the **output folder** tited clean_data.csv.
+The clean_data.csv can be found inside the **output folder** tited clean_data.csv.
 
-The paper Quarto markdown inside the **paper folder** containing the 
+The paper.qmd inside the **paper folder** containing the analysis on the stream chemistry research on Hurrican Hugo in Puerto Rico adn the reproduction of figure 3 from Schaefer's article, including a section for brief background, methods, data, and result.
 
 The scratch file inside the **scratch folder** was used as a jumpstart platform and should be ignored, unless curious.
 
 ## Figure output
-The figure output can be found in the folder inside figure_html which is in the docs folder inside the paper-files folder.
+
+Under **doc folder** the figure output is found inside the paper-files folder titled, **figure-html**.
 
 ## Contributers and Peer Review
+
 The author for this project on reproduction is Monique Hernandez.
 
-This final project was peer reviewed by a fellow MEDS student, Sarah H, where her github repo can be found here: https://github.com/sarahhinkley/sah214final.
-Kailani contributed to the 1_clean_data.R by creating the file and moving the code to the new file to automate it when rendering the Quarto markdown titled paper. Her github can be found here: https://github.com/sarahhinkley/sah214final.
+Peer reviewed by a fellow MEDS student, Sarah Hinkley, where her github repo can be found here: https://github.com/sarahhinkley/sah214final.
 
-William H. McDowell and USDA Forest Service for the raw data and research. Douglas Schaefer for the research article and the original figure that was reproduced.
+Contribution by Kailani Latimer, moved code from Scratch.R to the 1_clean_data.R to shorthand the code into automation when the paper.qmd renders into an html website with a neat code chunk displayed. Her github can be found here: https://github.com/kailani-boop/kl214final
+
+William H. McDowell and USDA Forest Service for the raw data and research.
+
+Douglas Schaefer for the research article and the original figure that was reproduced.
+
+Special thanks to the entire MEDS '27 cohort for working with me. Thank you Max and Ale for being there for troubleshooting and overall guidance during the making of this figure reproduction.
 
 ## References
 McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024. “Chemistry of Stream Water from the Luquillo Mountains.” Environmental Data Initiative. https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458. 

@@ -50,12 +50,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="eds-214-analytical-workflow-and-scientific-reproducibility" class="level1">
-<h1>EDS 214: Analytical Workflow and Scientific Reproducibility</h1>
-This repository houses the final project for the MEDS program at UCSB for the EDS 214 course that focuses on automating, documenting, and organizing workflow, as well as collaboration with peers.
+<section id="hurricane-effects-on-stream-chemistry" class="level1">
+<h1>Hurricane Effects on Stream Chemistry</h1>
+<section id="eds-214-analytical-workflow-and-scientific-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="eds-214-analytical-workflow-and-scientific-reproducibility">EDS 214: Analytical Workflow and Scientific Reproducibility</h2>
+<p>This repository houses the final project for the MEDS program at UCSB for the EDS 214 course that focuses on automating, documenting, and organizing workflow, as well as collaboration with peers. The main purpose of this repo is to contain all relevant and updated files that are associated with the creation off final proejct: a reproduced figure.</p>
 <center>
 <img src="/images/road_map_to.png" alt="The Roadmap to Reproducibilty" width="500" height="500">
 </center>
+</section>
 <section id="recreating-a-figure" class="level2">
 <h2 class="anchored" data-anchor-id="recreating-a-figure">Recreating a figure</h2>
 <center>
@@ -63,19 +66,35 @@ This repository houses the final project for the MEDS program at UCSB for the ED
 averages. (a) potassium, (b) nitrate-N, (c) magnesium, (d) calcium and (e) ammonium-N. The vertical lines
 mark the time of hurricane disturbance." width="500" height="500">
 </center>
-<p>The final project is the reproduction of a graph, seen above, from the article by Douglas A. Schafer titled, “Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico”. The final output is a plot with the chemical ions after the disturbance over a 9 week average from the years between 1985 to 1995.</p>
+<p>The final project is the reproduction of a graph, seen above, from the article by Douglas A. Schafer titled, “Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico”. The final output is a graph with five chemical ions for each of the four observed sites over a 9 week average from the years between 1985 to 1995.</p>
 </section>
 <section id="data-folder" class="level2">
 <h2 class="anchored" data-anchor-id="data-folder">Data folder</h2>
-<p>The data folder hosts the data pertaining from the site: https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064, which contain the effects based on the site and the chemical concentration levels after the storm.</p>
+<p>The <strong>data folder</strong> hosts the data that was downloaded online from Environmental Data Initiative, found here https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064, and are the following files:</p>
+<ul>
+<li>QuebradaCuenca1-Bisley.csv</li>
+<li>QuebradaCuenca2-Bisley.csv</li>
+<li>QuebradaCuenca3-Bisley.csv</li>
+<li>RioMameyesPuenteRoto.csv</li>
+</ul>
+<p>The R data file inside the <strong>R folder</strong> defines the moving function inputting the values into a tibble after selecting columns and filtering through the time period, from 1988 to 1994.</p>
+<p>The clean data titled <strong>1_clean_data.R</strong> contains the data for reading and finding the moving average from the raw data, binding the data, and pivoting longer.</p>
+<p>The clean data can be found inside the <strong>output folder</strong> tited clean_data.csv.</p>
+<p>The paper Quarto markdown inside the <strong>paper folder</strong> containing the</p>
+<p>The scratch file inside the <strong>scratch folder</strong> was used as a jumpstart platform and should be ignored, unless curious.</p>
 </section>
 <section id="figure-output" class="level2">
 <h2 class="anchored" data-anchor-id="figure-output">Figure output</h2>
-<p>The figure output can be found in the folder finaleds214_files inside figure_html.</p>
+<p>Under <strong>doc folder</strong> the figure output is under the paper-fiels folder titled, <strong>figure-html</strong>.</p>
 </section>
 <section id="contributers-and-peer-review" class="level2">
 <h2 class="anchored" data-anchor-id="contributers-and-peer-review">Contributers and Peer Review</h2>
-<p>This final project was peer reviewed by a fellow MEDS student, Sarah H, where her github repo can be found here: https://github.com/sarahhinkley/sah214final. Kailani contributed to the 1_clean_data.R by creating the file and moving the code to the new file to automate it when rendering the Quarto markdown titled paper. Her github can be found here: https://github.com/sarahhinkley/sah214final.</p>
+<p>The author for this project on reproduction is Monique Hernandez.</p>
+<p>Peer reviewed by a fellow MEDS student, Sarah H, where her github repo can be found here: https://github.com/sarahhinkley/sah214final.</p>
+<p>Contributed by Kailani, moved code from Scratch.R to the 1_clean_data.R to shorthand the code into automation when the paper.qmd renders into an html website with a neat code chunk displayed. Her github can be found here: https://github.com/sarahhinkley/sah214final.</p>
+<p>William H. McDowell and USDA Forest Service for the raw data and research.</p>
+<p>Douglas Schaefer for the research article and the original figure that was reproduced.</p>
+<p>Special thanks to the entire MEDS ’27 cohort for working with me. Thank you Max and Ale for being there for troubleshooting and overall guidance during the making of this figure reproduction.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>

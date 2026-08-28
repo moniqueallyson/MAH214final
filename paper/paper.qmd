@@ -65,8 +65,7 @@ A legend shows the sites represented by dashed or solid lines for each ion.
 
 The figure was created to show a close replica, though there have been some data loss over the years since its initial publication in 1999.
 
-```{r, echo = FALSE, include = FALSE}
-
+```{r, echo = FALSE}
 ggplot(
   data = figure3, # reading the clean data csv in output
   mapping = aes(

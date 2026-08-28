@@ -1,7 +1,7 @@
 # Hurricane Effects on Stream Chemistry
 
 ## EDS 214: Analytical Workflow and Scientific Reproducibility
-This repository houses the final project for the MEDS program at UCSB for the EDS 214 course that focuses on automating, documenting, and organizing workflow, as well as collaboration with peers.
+This repository houses the final project for the MEDS program for the EDS 214 course at UCSB with goals focused on automating, documenting, and organizing workflow, as well as collaboration with peers.
 
 <center>
 <img src="/images/road_map_to.png" alt="The Roadmap to Reproducibilty" width="500" height="500">
@@ -16,16 +16,14 @@ mark the time of hurricane disturbance." width="500" height="500">
 
 The final project reproduces figure 3 from the article titled, "Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico" by Schaefer (2000). The graph plots five chemical ions for each of the four observed sites over a 9 week average before and after the hurricane impact from the time period between 1985 to 1995.
 
-## Data folder
+## Folder Organization
 
-The **data folder**, downloaded from Environmental Data Initiative (2024), are the following files:
+**data**, downloaded from Environmental Data Initiative (2024), contain the following files:
 
 - QuebradaCuenca1-Bisley.csv
 - QuebradaCuenca2-Bisley.csv
 - QuebradaCuenca3-Bisley.csv
 - RioMameyesPuenteRoto.csv
-
-The folders are organized as follows:
 
 **R** contains the moving average function and other functions to data wrangle.
 

@@ -77,7 +77,7 @@ ggplot(
   )
 ) +
   ggtitle(
-    "Hurricane effect on stream chemistry" # title from the article to give reference on what the figure is about
+    "Hurricane effects on stream chemistry" # title from the article to give reference on what the figure is about
   ) +
   geom_line() +
   geom_vline(

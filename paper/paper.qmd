@@ -48,7 +48,7 @@ and filtering through the correct time period which was from 1988 to the end of 
 
 the v-line shown going down the graph represents the hurricane hugo formation.
 
-```{r, echo=FALSE, warning=FALSE}
+```{r, message=FALSE, echo=FALSE, warning=FALSE}
 
 ggplot(
   data = figure3, # reading the clean data csv in output

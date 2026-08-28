@@ -1,5 +1,5 @@
 ---
-title: "Final Project - Reproducing a figure"
+title: "Final Project"
 author: 
     name: "Monique Hernandez"
     email: mahernandez@ucsb.edu
@@ -13,21 +13,22 @@ format:
   html:
     theme: "pulse"
     other-links:
-      - text: Course Website EDS 214 
+      - text: EDS 214 Course Website
         href: https://eds-214-reproducibility-m26.github.io/course-materials/final-project/final-project.html
       - text: Monique's website
-        href: moniqueallyson.github.io
+        href: https://moniqueallyson.github.io/
 execute:
   message: false
   warning: false
 ---
 
+
 # Background
-We reproduced a figure.
+The final project is the reproduction of figure 3, from the article by Douglas A. Schafer titled, "Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico". The final output is a graph depicting a 9 week average from the years between 1985 to 1995, from four locations in Puerto Rico: Bisley Quebrada 1-3 (BQ1-3) and Puente Roto Mameyes. In the article, the results show that Nitrate, Ammonium, and Potassium have increased, while Magnesium and Calcium did not that hurricanes can have an effect on streamwater. The hurricane disturbance had a different effect on different chemicals. The most disturbed watersheds were at the sites BQ1-3.
 
 # Data
 
-The data is from
+The data is from William H. McDowell at the International Institute of Tropical Forestry(IITF), USDA Forest Service, that was downloaded from the EDI Data Portal.
 
 ```{r}
 library(tidyverse)
@@ -37,42 +38,49 @@ figure3 <- read_csv(
 ```
 
 
-
 # Methods
-we used R in positron.
+The first steps to reproducing the figure from Schaefer's article was to sort through the raw data by cleaning it using select and filter functions. 
+Sample_Date, Sample_ID, `NH4-N`, `NO3-N`, Ca, Mg, K
+and filtering through the correct time period which was from 1988 to the end of 1994.
+
 
 # Results
-```{r}
+
+the v-line shown going down the graph represents the hurricane hugo formation.
+
+```{r, echo=false, warning=false}
 
 ggplot(
-  data = figure3,
+  data = figure3, # reading the clean data csv in output
   mapping = aes(
+    # gives the x-axis, y-axis, and the line by site location for each chemical ion
     x = Sample_Date,
     y = concentration,
     linetype = site
   )
 ) +
   ggtitle(
-    "Hurricane effect on stream chemistry"
+    "Hurricane effect on stream chemistry" # title from the article to give reference on what the figure is about
   ) +
   geom_line() +
   geom_vline(
-    xintercept = ymd("1989-09-18"),
-    linetype = "dashed",
+    # to show reference line as shown in original figure which depicts the start of the distrubance
+    xintercept = ymd("1989-09-18"), # hurricane hugo date formation
+    linetype = "dashed", # dash line for the separation
     linewidth = 0.4
   ) +
   labs(
     x = "Years",
     y = NULL
   ) +
-  facet_wrap(~ion, ncol = 1, scales = "free") +
-  theme_bw() +
+  facet_wrap(~ion, ncol = 1, scales = "free") + # frees up the scaling for each ion since the units are differnet and so are the concentration levels
+  theme_bw() + # black and white to match the original
   theme(
-    legend.title = element_blank()
+    legend.title = element_blank() # original did not have a legend title
   ) +
   theme(
-    panel.grid.major = element_blank(), # remove major grid lines
-    panel.grid.minor = element_blank() # remove minor grid lines
+    panel.grid.major = element_blank(), # remove major grid lines for cleaner look
+    panel.grid.minor = element_blank() # remove minor grid lines for sleekness
   )
 ```
 

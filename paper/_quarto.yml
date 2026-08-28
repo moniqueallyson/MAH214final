@@ -5,7 +5,7 @@ project:
     - .nojekyll
 
 website:
-  title: "EDS 214 - Analytical Workflow and Scientific Reproducibilty"
+  title: "EDS 214: Analytical Workflow and Scientific Reproducibilty"
   navbar:
     pinned: true
     left:

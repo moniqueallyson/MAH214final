@@ -52,9 +52,10 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="hurricane-effects-on-stream-chemistry" class="level1">
 <h1>Hurricane Effects on Stream Chemistry</h1>
+<p><a href="https://moniqueallyson.github.io/MAH214final/paper.html">Final Project HTML</a></p>
 <section id="eds-214-analytical-workflow-and-scientific-reproducibility" class="level2">
 <h2 class="anchored" data-anchor-id="eds-214-analytical-workflow-and-scientific-reproducibility">EDS 214: Analytical Workflow and Scientific Reproducibility</h2>
-<p>This repository houses the final project for the MEDS program at UCSB for the EDS 214 course that focuses on automating, documenting, and organizing workflow, as well as collaboration with peers.</p>
+<p>This repository houses the final project for the MEDS program for the EDS 214 course at UCSB with goals focused on automating, documenting, and organizing workflow, as well as collaboration with peers.</p>
 <center>
 <img src="/images/road_map_to.png" alt="The Roadmap to Reproducibilty" width="500" height="500">
 </center>
@@ -66,18 +67,17 @@ ul.task-list li input[type="checkbox"] {
 averages. (a) potassium, (b) nitrate-N, (c) magnesium, (d) calcium and (e) ammonium-N. The vertical lines
 mark the time of hurricane disturbance." width="500" height="500">
 </center>
-<p>The final project is the reproduction of a graph, seen above, from the article by Douglas A. Schafer titled, “Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico”. The final output is a graph with five chemical ions for each of the four observed sites over a 9 week average from the years between 1985 to 1995.</p>
+<p>The final project reproduces figure 3 from the article titled, “Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico” by Schaefer (2000). The graph plots five chemical ions for each of the four observed sites over a 9 week average before and after the hurricane impact from the time period between 1985 to 1995.</p>
 </section>
-<section id="data-folder" class="level2">
-<h2 class="anchored" data-anchor-id="data-folder">Data folder</h2>
-<p>The <strong>data folder</strong>, downloaded from Environmental Data Initiative, are the following files:</p>
+<section id="folder-organization" class="level2">
+<h2 class="anchored" data-anchor-id="folder-organization">Folder Organization</h2>
+<p><strong>data</strong>, downloaded from Environmental Data Initiative (2024), contain the following files:</p>
 <ul>
 <li>QuebradaCuenca1-Bisley.csv</li>
 <li>QuebradaCuenca2-Bisley.csv</li>
 <li>QuebradaCuenca3-Bisley.csv</li>
 <li>RioMameyesPuenteRoto.csv</li>
 </ul>
-<p>The folders are as follows:</p>
 <p><strong>R</strong> contains the moving average function and other functions to data wrangle.</p>
 <p><strong>1_clean_data.R</strong> contains data to inout into the moving average functiont after reading and binding the raw data, then pivoting longer with clean data.</p>
 <p><strong>output</strong> houses the clean_data.csv script named respectively.</p>

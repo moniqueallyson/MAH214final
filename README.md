@@ -1,4 +1,5 @@
 # Hurricane Effects on Stream Chemistry
+[Final Project HTML](https://moniqueallyson.github.io/MAH214final/paper.html)
 
 ## EDS 214: Analytical Workflow and Scientific Reproducibility
 This repository houses the final project for the MEDS program for the EDS 214 course at UCSB with goals focused on automating, documenting, and organizing workflow, as well as collaboration with peers.

@@ -4,7 +4,7 @@
     "href": "paper.html",
     "title": "Final Project",
     "section": "",
-    "text": "Background\nThe final project is the reproduction of figure 3 from the article by Douglas A. Schafer titled, “Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico”. The final output is a graph depicting a 9 week average from the years between 1985 to 1995, from four locations in Puerto Rico: Bisley Quebrada 1-3 and Puente Roto Mameyes.\nThe figure displays a time-series plot for a 9 week moving average for the streamwater concentrations observed before and after the hurricane’s impact on multiple watersheds and chemical ions. Thus, there is an initial increase during the year of the hurricane formation in 1989.\nThe importance of the paper was to highlight the lack of investigation on water chemistry during a watershed disturbance, specifically a hurricane, in tropical regions.\n\n\nData\nThe data was received online through the Environmental Data Initiative portal created by William H. McDowell and the International Institute of Tropical Forestry(IITF), USDA Forest Service.\nFigure 3 from Schaefer’s article focused on the sites found in four separate data files. No other data was needed beyond those files.\n\n\nMethods\nThe first step to reproducing the figure from Schaefer’s article was to clean and combine the raw data by using the functions: select and filter.\nThe select function was used to choose the columns: the Sample Data, Sample ID, Nitrate, Potassium, Magnesium, Ammonium, and Calcium.\nThen, filtering was done to sort through the correct years, 1988 to 1994, as the time period assigned for the window of observations which was then inputted to find the 9 week moving average.\nThis would then be graphed using ggplot by chemical ions and concentration levels dependent on site location.\n\n\nResults\nThe vertical line on the time-series plot is shown as the representation of the hurricane formation. Thus, the peaks are iniitally high while some ions may decrease post-hurricane, while others remain elevated.\nEach ion, with the level plotted on the y-axis using each respectively found moving average across the 9 week window as time being depicted in years on the x-axis.\nA legend shows the sites represented by dashed or solid lines for each ion.\nThe figure was created to show a close replica, though there have been some data loss over the years since its initial publication in 1999."
+    "text": "The final project is the reproduction of figure 3 from the article by Douglas A. Schafer titled, “Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico”. The final output is a graph depicting a 9 week average from the years between 1985 to 1995, from four locations in Puerto Rico: Bisley Quebrada 1-3 and Puente Roto Mameyes.\nThe figure displays a time-series plot for a 9 week moving average for the streamwater concentrations observed before and after the hurricane’s impact on multiple watersheds and chemical ions. Thus, there is an initial increase during the year of the hurricane formation in 1989.\nThe importance of the paper was to highlight the lack of investigation on water chemistry during a watershed disturbance, specifically a hurricane, in tropical regions."
   },
   {
     "objectID": "index.html",
@@ -12,5 +12,12 @@
     "title": "EDS 214: Analytical Workflow and Scientific Reproducibilty",
     "section": "",
     "text": "Link to paper\n\n\n\nSchaefer Figure 3."
+  },
+  {
+    "objectID": "paper.html#original-figure",
+    "href": "paper.html#original-figure",
+    "title": "Final Project",
+    "section": "Original Figure",
+    "text": "Original Figure"
   }
 ]

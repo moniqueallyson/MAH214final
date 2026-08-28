@@ -106,5 +106,5 @@ ggplot(
   )
 ```
 
-## Original Figure
-![Schaefer Figure 3.](/Schaefer_figure3.png)
+## _Original Figure_
+![](/Schaefer_figure3.png)

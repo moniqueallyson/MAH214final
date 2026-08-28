@@ -1,7 +1,7 @@
 # Hurricane Effects on Stream Chemistry
 
 ## EDS 214: Analytical Workflow and Scientific Reproducibility
-This repository houses the final project for the MEDS program at UCSB for the EDS 214 course that focuses on automating, documenting, and organizing workflow, as well as collaboration with peers. The main purpose of this repo is to contain all relevant and updated files that are associated with the creation off final proejct: a reproduced figure.
+This repository houses the final project for the MEDS program at UCSB for the EDS 214 course that focuses on automating, documenting, and organizing workflow, as well as collaboration with peers.
 
 <center>
 <img src="/images/road_map_to.png" alt="The Roadmap to Reproducibilty" width="500" height="500">
@@ -14,30 +14,30 @@ averages. (a) potassium, (b) nitrate-N, (c) magnesium, (d) calcium and (e) ammon
 mark the time of hurricane disturbance." width="500" height="500">
 </center>
 
-The final project is the reproduction of a graph, seen above, from the article by Douglas A. Schafer titled, "Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico". The final output is a graph with five chemical ions for each of the four observed sites over a 9 week average from the years between 1985 to 1995.
+The final project reproduces figure 3 from the article titled, "Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico" by Schaefer (2000). The graph plots five chemical ions for each of the four observed sites over a 9 week average before and after the hurricane impact from the time period between 1985 to 1995.
 
-## Data folder 
+## Data folder
 
-The **data folder** hosts the data that was downloaded online from Environmental Data Initiative, found here https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064, and are the following files:
+The **data folder**, downloaded from Environmental Data Initiative (2024), are the following files:
 
 - QuebradaCuenca1-Bisley.csv
 - QuebradaCuenca2-Bisley.csv
 - QuebradaCuenca3-Bisley.csv
 - RioMameyesPuenteRoto.csv
 
-The R data file inside the **R folder** defines the moving function inputting the values into a tibble after selecting columns and filtering through the time period, from 1988 to 1994.
+The folders are organized as follows:
 
-The clean data titled **1_clean_data.R** contains the data for reading and finding the moving average from the raw data, binding the data, and pivoting longer.
+**R** contains the moving average function and other functions to data wrangle.
 
-The clean_data.csv can be found inside the **output folder** tited clean_data.csv.
+ **1_clean_data.R** contains data to inout into the moving average functiont after reading and binding the raw data, then pivoting longer with clean data.
 
-The paper.qmd inside the **paper folder** containing the analysis on the stream chemistry research on Hurrican Hugo in Puerto Rico adn the reproduction of figure 3 from Schaefer's article, including a section for brief background, methods, data, and result.
+**output** houses the clean_data.csv script named respectively.
 
-The scratch file inside the **scratch folder** was used as a jumpstart platform and should be ignored, unless curious.
+**paper** contains the analysis on the process of reproducing a figure from outside, raw, unsorted data.
 
-## Figure output
+The scratch file inside the **scratch** was used as a jumpstart platform and should be ignored, unless curious.
 
-Under **doc folder** the figure output is found inside the paper-files folder titled, **figure-html**.
+Under **docs** the figure output is found inside paper-files titled, **figure-html**.
 
 ## Contributers and Peer Review
 

@@ -36,10 +36,9 @@ The data was received online through the Environmental Data Initiative portal cr
 Figure 3 from Schaefer's article focused on the sites found in four separate data files. No other data was needed beyond those files.
 
 ```{r, echo = FALSE, include = FALSE}
+
 library(tidyverse)
-figure3 <- read_csv(
-  "/Users/master/Downloads/Bren/MEDS Summer/eds214/MAH214final/output/clean_data.csv"
-)
+figure3 <- read_csv("output/clean_data.csv")
 ```
 
 
@@ -107,4 +106,4 @@ ggplot(
 ```
 
 ## _Original Figure_
-![](/Schaefer_figure3.png)
+![Schaefer Figure 3.](/Schaefer_figure3.png)
